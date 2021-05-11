@@ -1,5 +1,9 @@
 <?php
 
+// Démarrage sessions PHP
+// (pour le support des variables de session)
+session_start();
+
 require 'vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
