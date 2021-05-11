@@ -18,8 +18,11 @@ class UtilisateurControleur {
     }
 
     public function cree($rq, $rs, $args) {
-        print(filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING));
         // Insertion dans la base...
-        // Redirection vers l'URL finale...
+        // ...
+        // Ajout d'un flash
+        
+        // Retour de la réponse avec redirection
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste'));
     }
 }

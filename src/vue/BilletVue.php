@@ -48,7 +48,7 @@ YOP;
 YOP;
 
             foreach ($this->source as $billet) {
-                $url = $this->cont['router']->pathFor('billet_aff', ['id' => $billet->id]);
+                $url = $this->cont->router->pathFor('billet_aff', ['id' => $billet->id]);
                 $res .= <<<YOP
       <li><a href="$url">{$billet->titre}</a></li>
 YOP;
