@@ -51,9 +51,9 @@ YOP;
                 $url = $this->cont['router']->pathFor('billet_aff', ['id' => $billet->id]);
                 $res .= <<<YOP
       <li><a href="$url">{$billet->titre}</a></li>
-    </ul>
 YOP;
             }
+            $res .= "</ul>";
         }
         else
             $res = "<h1>Erreur : la liste de billets n'existe pas !</h1>";
