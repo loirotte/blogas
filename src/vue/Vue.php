@@ -3,7 +3,6 @@
 namespace blogapp\vue;
 
 class Vue {
-
     protected $cont;
     protected $source;
     protected $selecteur;
@@ -23,7 +22,11 @@ class Vue {
     }
     
     public function userPage($cont) {
-        return <<<YOP
+        $flash = $this->cont->flash->getMessages();
+        // Décommenter la ligne suivante pour voir la
+        // structure des flashs (pour info)
+        //var_dump($flash);
+        $res = <<<YOP
  <!doctype html>
  <html>
    <head>
@@ -32,9 +35,27 @@ class Vue {
      <meta charset="utf-8" />
    </head>
    <body>
- $cont
+YOP;
+        // Gestion des flashs
+        if ($flash) {
+            foreach ($flash as $catFlash => $lesFlash) {
+                $res .= <<<YOP
+            <div class="flash-$catFlash">
+              <ul>
+YOP;
+                foreach($lesFlash as $f)
+                    $res .= "<li>$f</li>";
+
+                $res .= "</ul></div>";
+            }
+        }
+        
+        $res .= <<<YOP
+     $cont
    </body>
 </html>
 YOP;
+
+        return $res;
     }
 }

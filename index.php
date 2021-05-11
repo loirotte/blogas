@@ -19,7 +19,10 @@ ConnectionFactory::makeConnection('src/conf/conf.ini');
 $configuration = [
     'settings' => [
         'displayErrorDetails' => true
-    ]
+    ],
+    'flash' => function() {
+        return new \Slim\Flash\Messages();
+    }
 ];
 
 // Création du dispatcher
