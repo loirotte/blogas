@@ -23,15 +23,17 @@ class BilletVue extends Vue {
         $res = "";
 
         if ($this->source != null) {
-            $res .= "<h1>Affichage du billet : {$this->source->id}</h1>";
-            $res .= "<h2>Nom : {$this->source->titre}</h1>";
-            $res .= "<ul>";
-            $res .= "<li>Catégorie : {$this->source->categorie->titre}</li>";
-            $res .= "<li>Contenu : {$this->source->body}</li>";
-            $res .= "</ul>";
+            $res = <<<YOP
+    <h1>Affichage du billet : {$this->source->id}</h1>
+    <h2>Nom : {$this->source->titre}</h2>
+    <ul>
+      <li>Catégorie : {$this->source->categorie->titre}</li>
+      <li>Contenu : {$this->source->body}</li>
+    </ul>
+YOP;
         }
         else
-            $res .= "<h1>Erreur : le billet n'existe pas !</h1>";
+            $res = "<h1>Erreur : le billet n'existe pas !</h1>";
 
         return $res;
     }
@@ -40,21 +42,21 @@ class BilletVue extends Vue {
         $res = "";
         
         if ($this->source != null) {
-            $res .= "<h1>Affichage de la liste des billets</h1>";
-            $res .= "<ul>";
+            $res = <<<YOP
+    <h1>Affichage de la liste des billets</h1>
+    <ul>
+YOP;
 
             foreach ($this->source as $billet) {
                 $url = $this->cont['router']->pathFor('billet_aff', ['id' => $billet->id]);
-                $res .= "<li><a href=\"$url\">";
-                $res .= $billet->titre;
-                $res .= "</a></li>";
-                
+                $res .= <<<YOP
+      <li><a href="$url">{$billet->titre}</a></li>
+    </ul>
+YOP;
             }
-
-            $res .= "</ul>";
         }
         else
-            $res .= "<h1>Erreur : la liste de billets n'existe pas !</h1>";
+            $res = "<h1>Erreur : la liste de billets n'existe pas !</h1>";
 
         return $res;
     }
