@@ -3,6 +3,17 @@
 namespace blogapp\vue;
 
 class Vue {
+
+    protected $cont;
+    protected $source;
+    protected $selecteur;
+
+    public function __construct($cont, $src, $sel) {
+        $this->cont = $cont;
+        $this->source = $src;
+        $this->selecteur = $sel;
+    }
+
     public function userPage($cont) {
         $res = "";
 

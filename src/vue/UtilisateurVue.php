@@ -7,16 +7,6 @@ use blogapp\vue\Vue;
 class UtilisateurVue extends Vue {
     const NOUVEAU_VUE = 1;
     
-    private $cont;
-    private $source;
-    private $selecteur;
-
-    public function __construct($cont, $src, $sel) {
-        $this->cont = $cont;
-        $this->source = $src;
-        $this->selecteur = $sel;
-    }
-
     public function render() {
         switch($this->selecteur) {
         case self::NOUVEAU_VUE:

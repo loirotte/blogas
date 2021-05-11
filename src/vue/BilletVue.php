@@ -7,16 +7,6 @@ class BilletVue extends Vue {
     const BILLET_VUE = 1;
     const LISTE_VUE = 2;
     
-    private $cont;
-    private $source;
-    private $selecteur;
-
-    public function __construct($cont, $src, $sel) {
-        $this->cont = $cont;
-        $this->source = $src;
-        $this->selecteur = $sel;
-    }
-
     public function render() {
         switch($this->selecteur) {
         case self::BILLET_VUE:
