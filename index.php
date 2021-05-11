@@ -32,4 +32,12 @@ $app->get('/billets',
           '\blogapp\controleur\BilletControleur:liste')
     ->setName('billet_liste');
 
+$app->get('/newutil',
+          '\blogapp\controleur\UtilisateurControleur:nouveau')
+    ->setName('util_nouveau');
+
+$app->post('/createutil',
+          '\blogapp\controleur\UtilisateurControleur:cree')
+    ->setName('util_cree');
+
 $app->run();
