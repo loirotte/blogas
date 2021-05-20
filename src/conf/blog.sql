@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 11 mai 2021 à 13:14
--- Version du serveur :  8.0.23-0ubuntu0.20.04.1
+-- Généré le : jeu. 20 mai 2021 à 09:32
+-- Version du serveur :  8.0.25-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -78,7 +78,8 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 -- Index pour la table `billets`
 --
 ALTER TABLE `billets`
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `categ` (`cat_id`);
 
 --
 -- Index pour la table `categories`
@@ -101,6 +102,16 @@ ALTER TABLE `billets`
 --
 ALTER TABLE `categories`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `billets`
+--
+ALTER TABLE `billets`
+  ADD CONSTRAINT `categ` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
