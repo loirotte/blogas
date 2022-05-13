@@ -18,6 +18,13 @@ class UtilisateurControleur {
         return $rs;
     }
 
+    public function connexion($rq, $rs, $args) {
+            $bl = new UtilisateurVue($this->cont, null, UtilisateurVue::NOUVEAU_CONNEXION);
+            $rs->getBody()->write($bl->render());
+            return $rs;
+        }
+
+
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
         $u = new Utilisateur();

@@ -43,6 +43,10 @@ $app->get('/newutil',
           '\blogapp\controleur\UtilisateurControleur:nouveau')
     ->setName('util_nouveau');
 
+$app->get('/signup',
+          '\blogapp\controleur\UtilisateurControleur:connexion')
+    ->setName('util_connexion');
+
 $app->post('/createutil',
           '\blogapp\controleur\UtilisateurControleur:cree')
     ->setName('util_cree');
