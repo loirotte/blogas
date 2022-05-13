@@ -1,8 +1,7 @@
 RewriteEngine On
 #
 # RewriteBase indispensable sur webetu :
-
-# RewriteBase /www/username0/mywishlist
+RewriteBase /www/tellitoc2u/blogas
 
 
 #
