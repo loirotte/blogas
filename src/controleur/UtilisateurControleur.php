@@ -2,6 +2,7 @@
 
 namespace blogapp\controleur;
 
+use blogapp\modele\Utilisateur;
 use blogapp\vue\UtilisateurVue;
 
 class UtilisateurControleur {
@@ -19,11 +20,17 @@ class UtilisateurControleur {
 
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
-        $nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);
+        $u = new Utilisateur();
+        $u->pseudo = filter_var($rq->getParsedBodyParam('pseudo'), FILTER_SANITIZE_STRING);
+        $u->nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);
+        $u->prenom = filter_var($rq->getParsedBodyParam('prenom'), FILTER_SANITIZE_STRING);
+        $u->mail = filter_var($rq->getParsedBodyParam('mail'), FILTER_SANITIZE_STRING);
+        $u->mdp = password_hash(filter_var($rq->getParsedBodyParam('mdp'), FILTER_SANITIZE_STRING), 
+                                    PASSWORD_DEFAULT, ['cost'=>12]);
         // Insertion dans la base...
-        // ...
+        $u->save();
         // Ajout d'un flash
-        $this->cont->flash->addMessage('info', "Utilisateur $nom ajouté !");
+        $this->cont->flash->addMessage('info', "Utilisateur $pseudo ajouté !");
         // Retour de la réponse avec redirection
         return $rs->withRedirect($this->cont->router->pathFor('billet_liste'));
     }
