@@ -64,7 +64,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 (1, 'sport', 'tout sur le sport en general'),
 (2, 'cinema', 'tout sur le cinema'),
-(3, 'music', 'toute la music que j\'aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee'),
+(3, 'music', 'toute la music que j''aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee'),
 (4, 'tele', 'tout sur les programmes tele, les emissions, les series, et vos stars preferes'),
 (8, 'test', 'catégorie de test'),
 (9, 'test', 'catégorie de test'),
