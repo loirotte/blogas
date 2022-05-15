@@ -2,9 +2,7 @@
 
 namespace blogapp\modele;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Membre extends Model {
+class Membre extends Illuminate\Database\Eloquent\Model {
     protected $table = 'membres';
     protected $primaryKey = 'id';
     protected $pseudo, $nom, $prenom, $mail, $mdp;
