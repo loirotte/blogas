@@ -64,11 +64,27 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 (1, 'sport', 'tout sur le sport en general'),
 (2, 'cinema', 'tout sur le cinema'),
-(3, 'music', 'toute la music que j''aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee'),
+(3, 'music', "toute la music que j'aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee"),
 (4, 'tele', 'tout sur les programmes tele, les emissions, les series, et vos stars preferes'),
 (8, 'test', 'catégorie de test'),
 (9, 'test', 'catégorie de test'),
 (10, 'test', 'catégorie de test');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories`
+--
+
+CREATE TABLE `membres` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(15) NOT NULL,
+  `nom` varchar(15) NOT NULL,
+  `prenom` varchar(15) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `mdp_hash` varchar(62) NOT NULL,
+  `droit` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Index pour les tables déchargées
@@ -86,6 +102,14 @@ ALTER TABLE `billets`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `membres`
+--
+ALTER TABLE `membres`
+  ADD PRIMARY KEY (`id`);
+
+
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
