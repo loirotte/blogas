@@ -35,7 +35,7 @@ class UtilisateurVue extends Vue {
           mail
           <input type="text" name="mail"><br>
           mot de passe
-          <input type="password" name="mot de passe"><br>
+          <input type="password" name="mdp"><br>
           <input type="submit" value="Validation">
         </form>
 YOP;
@@ -44,12 +44,12 @@ YOP;
     //Je pense appeler la methode la dans index
     public function connexion() {
         return <<<YOP
-        <form method="post" action="{$this->cont['router']->pathFor('util_connexion')}">
+        <form method="post" action="{$this->cont['router']->pathFor('util_conn')}">
         <h1>CONNEXION</h1>          
-          mail
-          <input type="text" name="mail"><br>
+          pseudo
+          <input type="text" name="pseudo"><br>
           mot de passe
-          <input type="password" name="mot de passe"><br>
+          <input type="password" name="mdp"><br>
           <input type="submit" value="connexion">
         </form>
 YOP;

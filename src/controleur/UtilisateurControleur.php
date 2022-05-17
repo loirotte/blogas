@@ -24,6 +24,17 @@ class UtilisateurControleur {
             return $rs;
         }
 
+    public function connecter($rq, $rs, $args) {
+        $pseudo = filter_var($rq->getParsedBodyParam('pseudo'), FILTER_SANITIZE_STRING);
+        $u = Utilisateur::select('pseudo','mdp')->where('pseudo','=',$pseudo)->first();
+        $mdp = filter_var($rq->getParsedBodyParam('mdp'), FILTER_SANITIZE_STRING);
+        if(password_verify($mdp, $u->mdp)){
+            $this->cont->flash->addMessage('info', "Bienvenue $pseudo!");
+            return $rs->withRedirect($this->cont->router->pathFor('billet_liste'));
+        } else {
+            $this->cont->flash->addMessage('info', "Nom d'utilisateur ou mot de passe incorrect!");
+        }
+    }
 
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
