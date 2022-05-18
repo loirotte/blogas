@@ -19,7 +19,12 @@ class UtilisateurControleur {
 
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
+        $pseudo = filter_var($rq->getParsedBodyParam('pseudo'), FILTER_SANITIZE_STRING);
         $nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);
+        $prenom = filter_var($rq->getParsedBodyParam('prenom'), FILTER_SANITIZE_STRING);
+        $email = filter_var($rq->getParsedBodyParam('email'), FILTER_SANITIZE_STRING);
+        $mdp = filter_var($rq->getParsedBodyParam('mdp'), FILTER_SANITIZE_STRING);
+        $droit = filter_var($rq->getParsedBodyParam('droit'), FILTER_SANITIZE_STRING);
         // Insertion dans la base...
         // ...
         // Ajout d'un flash
