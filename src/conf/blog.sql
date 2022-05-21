@@ -68,8 +68,6 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 (3, 'music', "toute la music que j'aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee"),
 (4, 'tele', 'tout sur les programmes tele, les emissions, les series, et vos stars preferes'),
 (5, 'diver', 'infos diverses'),
-(9, 'test', 'catégorie de test'),
-(10, 'test', 'catégorie de test');
 
 -- --------------------------------------------------------
 
@@ -137,6 +135,11 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `billets`
   ADD CONSTRAINT `categ` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `email`, `hash`, `admin`) VALUES
+(1, 'JosefZeCat', 'Parisse', 'Josef', 'JosefZeCat@mail.com', 'GingerCat', 0)
+(3, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', 'FanDeJosef', 1)
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
