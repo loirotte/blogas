@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `billets`
 --
-
+DROP TABLE IF EXISTS `billets`;
 CREATE TABLE `billets` (
   `id` int NOT NULL,
   `titre` varchar(64) DEFAULT NULL,
@@ -51,7 +51,7 @@ INSERT INTO `billets` (`id`, `titre`, `body`, `cat_id`, `date`) VALUES
 --
 -- Structure de la table `categories`
 --
-
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int NOT NULL,
   `titre` varchar(64) NOT NULL,
@@ -74,7 +74,7 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 --
 -- Structure de la table `categories`
 --
-
+DROP TABLE IF EXISTS `membres`;
 CREATE TABLE `membres` (
   `id` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(15) NOT NULL,
@@ -142,8 +142,10 @@ INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `email`, `hash`, `admin`
 (3, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', '$2y$10$qNUabGPUov4KdpWgvOh3o.f9m0E6tYVNK0vqY6EiwFe4asZMm.mhC', 1)
 COMMIT;
 
+/*
 INSERT INTO `commentaires` (`id`, `billet`, `content`, `auteur`, `date`) VALUES
     (1, 4, 'Attaquer les humains naifs, rien de plus fun', 'JosefZeCat', '2022-05-21');
+ */
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
