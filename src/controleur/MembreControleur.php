@@ -34,10 +34,10 @@ class MembreControleur
     //member authentication
     public function authentifie($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
-        $email = filter_var($rq->getParsedBodyParam('email'), FILTER_SANITIZE_STRING);
+        $mail = filter_var($rq->getParsedBodyParam('email'), FILTER_SANITIZE_STRING);
         $password = filter_var($rq->getParsedBodyParam('password'), FILTER_SANITIZE_STRING);
 
-        $membre = Membre::where('email','=',$email)->first();
+        $membre = Membre::where('mail','=',$mail)->first();
         if ($membre === null)
         {
             $this->cont->flash->addMessage('error', "Erreur : email incorrect");
@@ -45,7 +45,7 @@ class MembreControleur
         }
         else
         {
-            $hash = $membre->hash;
+            $hash = $membre->mdp_hash;
             if (password_verify($password, $hash)) {
                 $pseudo=$membre->pseudo;
                 setcookie("membre_authentifier",$pseudo,time()+7*24*3600);
