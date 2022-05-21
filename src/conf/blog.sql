@@ -142,6 +142,9 @@ INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `email`, `hash`, `admin`
 (3, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', '$2y$10$qNUabGPUov4KdpWgvOh3o.f9m0E6tYVNK0vqY6EiwFe4asZMm.mhC', 1)
 COMMIT;
 
+INSERT INTO `commentaires` (`id`, `billet`, `content`, `auteur`, `date`) VALUES
+    (1, 4, 'Attaquer les humains naifs, rien de plus fun', 'JosefZeCat', '2022-05-21');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
