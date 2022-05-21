@@ -20,7 +20,7 @@ class UtilisateurVue extends Vue {
         return <<<YOP
         <form method="post" action="{$this->cont['router']->pathFor('util_cree')}">
             <h1>Inscription d'un nouveau membre</h1>
-            <input type="text" name="pseudo" placeholder="Enter your pseudo" required><br>
+            <input type="text" id="pseudo" name="pseudo" placeholder="Enter your pseudo" required><br>
             <input type="text" name="nom" placeholder="Enter your nom" required><br>
             <input type="text" name="prenom" placeholder="Enter your prenom" required><br>
             <input type="text" name="mail" placeholder="Enter your mail" required><br>
