@@ -27,7 +27,7 @@ class MembreControleur
         {
             setcookie("membre");
         }
-        $this->cont->flash->addMessage('info', "disconnection successfully");
+        $this->cont->flash->addMessage('info', "disconnected successfully");
         return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numPage' => 1]));
     }
 }
