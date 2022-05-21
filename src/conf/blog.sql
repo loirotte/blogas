@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `billets`
 --
-
+DROP TABLE IF EXISTS `billets`;
 CREATE TABLE `billets` (
   `id` int NOT NULL,
   `titre` varchar(64) DEFAULT NULL,
@@ -66,14 +66,14 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 (2, 'cinema', 'tout sur le cinema'),
 (3, 'music', "toute la music que j'aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee"),
 (4, 'tele', 'tout sur les programmes tele, les emissions, les series, et vos stars preferes'),
-(5, 'diver', 'infos diverses'),
+(5, 'diver', 'infos diverses');
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `categories`
 --
-
+DROP TABLE IF EXISTS `membres`;
 CREATE TABLE `membres` (
   `id` int NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(15) NOT NULL,
