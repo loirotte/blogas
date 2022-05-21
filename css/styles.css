@@ -42,7 +42,7 @@ div.flash-error {
 input[type=text]{
     padding:5px;
     width: 100%;
-    margin: 5px
+    margin: 5px;
     outline: 8px ridge rgba(32, 32, 121, 0.6);
     border-radius: 2rem;
 }
