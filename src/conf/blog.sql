@@ -138,8 +138,8 @@ ALTER TABLE `billets`
 COMMIT;
 
 INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `email`, `hash`, `admin`) VALUES
-(1, 'JosefZeCat', 'Parisse', 'Josef', 'JosefZeCat@mail.com', 'GingerCat', 0)
-(3, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', 'FanDeJosef', 1)
+(1, 'JosefZeCat', 'Parisse', 'Josef', 'JosefZeCat@mail.com', '$2y$10$3l21SWW6coA.qZPgfBA.vulJX1FYIq.DamD21tEFLQ3Y4IWViIGGS', 0)
+(3, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', '$2y$10$qNUabGPUov4KdpWgvOh3o.f9m0E6tYVNK0vqY6EiwFe4asZMm.mhC', 1)
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
