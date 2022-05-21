@@ -34,13 +34,13 @@ class MembreControleur
     //member authentication
     public function authentifie($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
-        $mail = filter_var($rq->getParsedBodyParam('email'), FILTER_SANITIZE_STRING);
-        $password = filter_var($rq->getParsedBodyParam('password'), FILTER_SANITIZE_STRING);
+        $mail = filter_var($rq->getParsedBodyParam('mail'), FILTER_SANITIZE_STRING);
+        $password = filter_var($rq->getParsedBodyParam('mdp_hash'), FILTER_SANITIZE_STRING);
 
         $membre = Membre::where('mail','=',$mail)->first();
         if ($membre === null)
         {
-            $this->cont->flash->addMessage('error', "Erreur : email incorrect");
+            $this->cont->flash->addMessage('error', "Error : Wrong email");
             return $rs->withRedirect($this->cont->router->pathFor('memb_connect'));
         }
         else
@@ -51,13 +51,13 @@ class MembreControleur
                 setcookie("membre_authentifier",$pseudo,time()+7*24*3600);
             }
             else{
-                $this->cont->flash->addMessage('error', "Erreur : mot de passe incorrect");
+                $this->cont->flash->addMessage('error', "Error : Wrong password");
                 return $rs->withRedirect($this->cont->router->pathFor('memb_connect'));
             }
         }
 
         // Ajout d'un flash
-        $this->cont->flash->addMessage('info', "Utilisateur $pseudo connecté !");
+        $this->cont->flash->addMessage('info', "User $pseudo connected !");
         // Retour de la réponse avec redirection
         return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numPage' =>1]));
     }
