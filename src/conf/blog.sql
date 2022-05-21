@@ -76,7 +76,7 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 --
 DROP TABLE IF EXISTS `membres`;
 CREATE TABLE `membres` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `pseudo` varchar(15) NOT NULL,
   `nom` varchar(15) NOT NULL,
   `prenom` varchar(15) NOT NULL,
