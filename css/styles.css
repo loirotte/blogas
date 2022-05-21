@@ -34,10 +34,13 @@ div.flash-error {
 }
 
 input{
-    
+
 }
 
 .toggle-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     border: none;
     opacity: 0;
