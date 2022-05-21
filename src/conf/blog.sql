@@ -137,7 +137,7 @@ ALTER TABLE `billets`
   ADD CONSTRAINT `categ` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
-INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `email`, `hash`, `admin`) VALUES
+INSERT INTO `membres` (`id`, `pseudo`, `nom`, `prenom`, `mail`, `mdp_hash`, `droit`) VALUES
 (1, 'JosefZeCat', 'Parisse', 'Josef', 'JosefZeCat@mail.com', '$2y$10$3l21SWW6coA.qZPgfBA.vulJX1FYIq.DamD21tEFLQ3Y4IWViIGGS', 0),
 (2, 'Toofik', 'Godfrin', 'Emilien', 'Toofik@mail.com', '$2y$10$qNUabGPUov4KdpWgvOh3o.f9m0E6tYVNK0vqY6EiwFe4asZMm.mhC', 1);
 COMMIT;
