@@ -31,14 +31,14 @@ class Vue {
         {
             $boutons = <<<YOP
           <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Log Out</button>
-          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">Créer un billet</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">New Bill</button>
           YOP;
         }
         else
         {
             $boutons = <<<YOP
           <button onclick="window.location.href = '{$this->baseURL()}/connexion';">Log In</button>
-          <button onclick="window.location.href = '{$this->baseURL()}/newutil';">Inscription</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newutil';">Sign In</button>
           YOP;
         }
 
