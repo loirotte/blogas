@@ -47,7 +47,7 @@ class UtilisateurControleur {
             $this->cont->flash->addMessage('info', "Echec : mots de passe différents ");
             return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
         } else {
-            $membre->hash = password_hash($mdp,PASSWORD_DEFAULT);
+            $membre->mdp_hash = password_hash($mdp,PASSWORD_DEFAULT);
         }
 
         $membre->save();
