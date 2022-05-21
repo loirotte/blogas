@@ -19,7 +19,7 @@ class MembreVue extends Vue
 
     public function connecte(){
         return <<<YOP
-            <form method="post" action="{$this->cont['router']->pathFor('memb_auth')}">
+            <form method="post" action="{$this->cont['router']->pathFor('memb_authent')}">
                 <input type="text" class="toggle-all" name="mail" placeholder="Enter your email" required><br>
                 <input type="text" class="toggle-all" name="mdp_hash" placeholder="Enter your password" required><br>
                 <button type="submit" value="Connexion"/>
