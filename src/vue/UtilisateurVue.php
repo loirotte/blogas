@@ -21,7 +21,7 @@ class UtilisateurVue extends Vue {
         <form method="post" action="{$this->cont['router']->pathFor('util_cree')}">
             <h1>Inscription d'un nouveau membre</h1>
                 <div class="form-group">
-                    <input type="text" class="toggle-all" name="pseudo" placeholder="Enter your pseudo" required><br>
+                    <input type="text" class="q-mt-md" name="pseudo" placeholder="Enter your pseudo" required><br>
                     <input type="text" class="toggle-all" name="nom" placeholder="Enter your nom" required><br>
                     <input type="text" class="toggle-all" name="prenom" placeholder="Enter your prenom" required><br>
                     <input type="text" class="toggle-all" name="mail" placeholder="Enter your mail" required><br>
