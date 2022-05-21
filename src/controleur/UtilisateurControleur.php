@@ -3,6 +3,7 @@
 namespace blogapp\controleur;
 
 use blogapp\vue\UtilisateurVue;
+use blogapp\modele\Membre;
 
 class UtilisateurControleur {
     private $cont;
