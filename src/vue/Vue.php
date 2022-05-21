@@ -52,6 +52,9 @@ class Vue {
              <meta charset="utf-8" />
            </head>
            <body>
+           <div id=connexion>
+                  $boutons
+            </div>
 YOP;
         // Gestion des flashs
         if ($flash) {
