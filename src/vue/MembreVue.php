@@ -22,7 +22,7 @@ class MembreVue extends Vue
             <form method="post" action="{$this->cont['router']->pathFor('memb_authent')}">
                 <input type="text" class="toggle-all" name="mail" placeholder="Enter your email" required><br>
                 <input type="text" class="toggle-all" name="mdp_hash" placeholder="Enter your password" required><br>
-                <button type="submit" value="Connexion" label="Connexion"/>
+                <button type="submit" value="Connexion">Connexion</button>
             </form>
 YOP;
 
