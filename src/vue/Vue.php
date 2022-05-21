@@ -26,15 +26,32 @@ class Vue {
         // Décommenter la ligne suivante pour voir la
         // structure des flashs (pour info)
         //var_dump($flash);
+
+        if (isset($_COOKIE["membre"]))
+        {
+            $boutons = <<<YOP
+          <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Deconnexion</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">Saisir un billet</button>
+          YOP;
+        }
+        else
+        {
+            $boutons = <<<YOP
+          <button onclick="window.location.href = '{$this->baseURL()}/connexion';">Connexion</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newutil';">Inscription</button>
+          YOP;
+        }
+
+
         $res = <<<YOP
- <!doctype html>
- <html>
-   <head>
-     <title>Application de Blog !</title>
-     <link rel="stylesheet" href="{$this->baseURL()}/css/styles.css" type="text/css" />
-     <meta charset="utf-8" />
-   </head>
-   <body>
+         <!doctype html>
+         <html>
+           <head>
+             <title>Application de Blog !</title>
+             <link rel="stylesheet" href="{$this->baseURL()}/css/styles.css" type="text/css" />
+             <meta charset="utf-8" />
+           </head>
+           <body>
 YOP;
         // Gestion des flashs
         if ($flash) {
