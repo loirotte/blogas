@@ -27,7 +27,7 @@ class UtilisateurVue extends Vue {
                     <input type="text" class="toggle-all" name="mail" placeholder="Enter your email" required><br>
                     <input type="text" class="toggle-all" name="mdp_hash" placeholder="Enter your password" required><br>
                     <input type="text" class="toggle-all" name="verification" placeholder="Enter your password again" required><br>
-                    <button type="submit" value="Enregistrer" label="submit"/>
+                    <button type="submit" value="Enregistrer">Submit</button>
                 </div>
         </form>
 YOP;
