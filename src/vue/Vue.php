@@ -27,7 +27,7 @@ class Vue {
         // structure des flashs (pour info)
         //var_dump($flash);
 
-        if (isset($_COOKIE["membre"]))
+        if (isset($_COOKIE["membre_authentifier"]))
         {
             $boutons = <<<YOP
           <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Deconnexion</button>
