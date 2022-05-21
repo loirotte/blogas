@@ -51,6 +51,7 @@ INSERT INTO `billets` (`id`, `titre`, `body`, `cat_id`, `date`) VALUES
 --
 -- Structure de la table `categories`
 --
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int NOT NULL,
   `titre` varchar(64) NOT NULL,
