@@ -31,24 +31,29 @@ $app = new \Slim\App($configuration);
 
 // Définition des routes
 
+// Routes qui redirige vers la liste de billets
 $app->get('/',
     function ($rq,$rs,$args){
         return $rs->withRedirect($this['router']->pathFor('billet_liste'));
         })
     ->setName('billet_aff');
 
+// Affichage d'un billet
 $app->get('/billet/{id}',
           '\blogapp\controleur\BilletControleur:affiche')
     ->setName('billet_aff');
 
+// Affichage de tous les billets
 $app->get('/billets',
           '\blogapp\controleur\BilletControleur:liste')
     ->setName('billet_liste');
 
+// Création utilisateur
 $app->get('/newutil',
           '\blogapp\controleur\UtilisateurControleur:nouveau')
     ->setName('util_nouveau');
 
+// Suite à la création utilisateur
 $app->post('/createutil',
           '\blogapp\controleur\UtilisateurControleur:cree')
     ->setName('util_cree');

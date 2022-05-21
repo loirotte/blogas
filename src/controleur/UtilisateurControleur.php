@@ -19,9 +19,38 @@ class UtilisateurControleur {
 
     public function cree($rq, $rs, $args) {
         // Récupération variable POST + nettoyage
+        $pseudo = filter_var($rq->getParsedBodyParam('pseudo'), FILTER_SANITIZE_STRING);
         $nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);
+        $prenom = filter_var($rq->getParsedBodyParam('prenom'), FILTER_SANITIZE_STRING);
+        $mail = filter_var($rq->getParsedBodyParam('mail'), FILTER_SANITIZE_STRING);
+        $mdp = filter_var($rq->getParsedBodyParam('mdp'), FILTER_SANITIZE_STRING);
+        $verification = filter_var($rq->getParsedBodyParam('verification'), FILTER_SANITIZE_STRING);
+
         // Insertion dans la base...
-        // ...
+        $membre = new Membre();
+        $membre->pseudo = $pseudo;
+        $membre->nom = $nom;
+        $membre->prenom = $prenom;
+
+        // Valider email
+        if(!(filter_var($mail, FILTER_VALIDATE_EMAIL))){
+            $this->cont->flash->addMessage('info', "Echec : email incorrect ");
+            return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
+        }
+        else{
+            $membre->mail = $mail;
+        }
+
+        // Verifier mail
+        if($password !== $confirmation){
+            $this->cont->flash->addMessage('info', "Echec : mots de passe différents ");
+            return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
+        } else {
+            $membre->hash = password_hash($password,PASSWORD_DEFAULT);
+        }
+
+        $membre->save();
+
         // Ajout d'un flash
         $this->cont->flash->addMessage('info', "Utilisateur $nom ajouté !");
         // Retour de la réponse avec redirection
