@@ -59,16 +59,16 @@ $app->post('/createutil',
     ->setName('util_cree');
 
 // Connexion d'un utilisateur
-$app->post('/connexion',
+$app->get('/connexion',
     '\blogapp\controleur\MembreControleur:connexion')
     ->setName('memb_connect');
 
-$app->post('/deconnexion',
+$app->get('/deconnexion',
     '\blogapp\controleur\MembreControleur:connexion')
     ->setName('memb_deconnect');
 
 $app->post('/authentification',
     '\blogapp\controleur\MembreControleur:authentifie')
-    ->setName('memb_authen');
+    ->setName('memb_authent');
 
 $app->run();
