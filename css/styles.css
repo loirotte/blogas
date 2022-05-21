@@ -33,10 +33,14 @@ div.flash-error {
     border: 2px solid red;
 }
 
-.toggle-all {
+form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+}
+
+.toggle-all {
     text-align: center;
     border: none;
     opacity: 0;
