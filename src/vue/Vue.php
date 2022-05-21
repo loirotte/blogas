@@ -30,14 +30,14 @@ class Vue {
         if (isset($_COOKIE["membre_authentifier"]))
         {
             $boutons = <<<YOP
-          <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Deconnexion</button>
-          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">Saisir un billet</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Log Out</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">Créer un billet</button>
           YOP;
         }
         else
         {
             $boutons = <<<YOP
-          <button onclick="window.location.href = '{$this->baseURL()}/connexion';">Connexion</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/connexion';">Log In</button>
           <button onclick="window.location.href = '{$this->baseURL()}/newutil';">Inscription</button>
           YOP;
         }
