@@ -44,7 +44,7 @@ input{
     margin-bottom:10px;
 }
 
-.toggle-all {
+. form-group .toggle-all {
     text-align: center;
     border: none;
     opacity: 0;
