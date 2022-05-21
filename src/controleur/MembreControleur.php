@@ -41,7 +41,7 @@ class MembreControleur
         if ($membre === null)
         {
             $this->cont->flash->addMessage('error', "Erreur : email incorrect");
-            return $rs->withRedirect($this->cont->router->pathFor('memb_co'));
+            return $rs->withRedirect($this->cont->router->pathFor('memb_connect'));
         }
         else
         {
@@ -52,7 +52,7 @@ class MembreControleur
             }
             else{
                 $this->cont->flash->addMessage('error', "Erreur : mot de passe incorrect");
-                return $rs->withRedirect($this->cont->router->pathFor('memb_co'));
+                return $rs->withRedirect($this->cont->router->pathFor('memb_connect'));
             }
         }
 
