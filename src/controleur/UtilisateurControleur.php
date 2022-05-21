@@ -41,7 +41,7 @@ class UtilisateurControleur {
             $membre->mail = $mail;
         }
 
-        // Verifier mail
+        // Verifier mdp
         if($mdp !== $verification){
             $this->cont->flash->addMessage('info', "Echec : mots de passe différents ");
             return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
