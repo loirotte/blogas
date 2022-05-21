@@ -23,7 +23,7 @@ class UtilisateurControleur {
         $nom = filter_var($rq->getParsedBodyParam('nom'), FILTER_SANITIZE_STRING);
         $prenom = filter_var($rq->getParsedBodyParam('prenom'), FILTER_SANITIZE_STRING);
         $mail = filter_var($rq->getParsedBodyParam('mail'), FILTER_SANITIZE_STRING);
-        $mdp = filter_var($rq->getParsedBodyParam('mdp'), FILTER_SANITIZE_STRING);
+        $mdp = filter_var($rq->getParsedBodyParam('mdp_hash'), FILTER_SANITIZE_STRING);
         $verification = filter_var($rq->getParsedBodyParam('verification'), FILTER_SANITIZE_STRING);
 
         // Insertion dans la base...
@@ -42,11 +42,11 @@ class UtilisateurControleur {
         }
 
         // Verifier mail
-        if($password !== $confirmation){
+        if($mdp !== $verification){
             $this->cont->flash->addMessage('info', "Echec : mots de passe différents ");
             return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
         } else {
-            $membre->hash = password_hash($password,PASSWORD_DEFAULT);
+            $membre->hash = password_hash($mdp,PASSWORD_DEFAULT);
         }
 
         $membre->save();
