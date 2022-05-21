@@ -35,7 +35,7 @@ $app->get('/billet/{id}',
           '\blogapp\controleur\BilletControleur:affiche')
     ->setName('billet_aff');
 
-$app->get('/billets',
+$app->get('/',
           '\blogapp\controleur\BilletControleur:liste')
     ->setName('billet_liste');
 
@@ -43,8 +43,16 @@ $app->get('/newutil',
           '\blogapp\controleur\UtilisateurControleur:nouveau')
     ->setName('util_nouveau');
 
+$app->get('/signup',
+          '\blogapp\controleur\UtilisateurControleur:connexion')
+    ->setName('util_connexion');
+
 $app->post('/createutil',
           '\blogapp\controleur\UtilisateurControleur:cree')
     ->setName('util_cree');
+
+$app->post('/connecteutil',
+          '\blogapp\controleur\UtilisateurControleur:connecter')
+    ->setName('util_conn');
 
 $app->run();

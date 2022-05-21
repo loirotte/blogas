@@ -15,6 +15,7 @@ class BilletControleur {
     public function affiche($rq, $rs, $args) {
         $id = $args['id'];
         $billet = Billet::where('id', '=', $id)->first();
+        $coms = Commantaire::select('id','pseudo','textcom','dateCom')->where('idBillet','=',$id)->get();
 
         $bl = new BilletVue($this->cont, $billet, BilletVue::BILLET_VUE);
         $rs->getBody()->write($bl->render());
