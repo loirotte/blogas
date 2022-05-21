@@ -25,7 +25,7 @@ class UtilisateurVue extends Vue {
             <input type="text" name="prenom" placeholder="Enter your prenom" required>
             <input type="text" name="mail" placeholder="Enter your mail" required>
             <input type="text" name="mdp_hash" placeholder="Enter your password" required>
-            <input type="text" name="verification" placeholder="Enter your password again" required>password" required>
+            <input type="text" name="verification" placeholder="Enter your password again" required>
             <input type="submit" value="Enregistrer">
         </form>
 YOP;
