@@ -42,8 +42,9 @@ CREATE TABLE `billets` (
 
 INSERT INTO `billets` (`id`, `titre`, `body`, `cat_id`, `date`) VALUES
 (1, 'go sluc, go', 'tout est dans le titre', 1, '2014-11-20'),
-(2, 'Concert : nolwenn live', 'c\'est d\'la balle, Ca vaut bien Mick Jagger et Iggy Stooges réunis.\r\nAngus Young doit l\'ecouter en boucle...', 3, '2014-11-20'),
-(3, 'Titanic', 'c\'est l\'histoire d\'un gros bateau qui croise un glaçon', 2, '2014-11-20');
+(2, 'Concert : nolwenn live', 'de la balle, Ca vaut bien Mick Jagger et Iggy Stooges réunis.\r\nAngus Young doit ecouter en boucle...', 3, '2014-11-20'),
+(3, 'Titanic', 'un gros bateau qui croise un glaçon', 2, '2014-11-20');
+(4, 'Josef The Cat', 'a demoniac ginger cat', 5, '2022-05-15');
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,7 @@ INSERT INTO `categories` (`id`, `titre`, `description`) VALUES
 (2, 'cinema', 'tout sur le cinema'),
 (3, 'music', "toute la music que j'aaiiiimeuh, elle vient de la, elle vient du bluuuuuuzee"),
 (4, 'tele', 'tout sur les programmes tele, les emissions, les series, et vos stars preferes'),
-(8, 'test', 'catégorie de test'),
+(5, 'diver', 'infos diverses'),
 (9, 'test', 'catégorie de test'),
 (10, 'test', 'catégorie de test');
 
