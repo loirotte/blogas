@@ -36,10 +36,10 @@ class NewBillControleur
 
         //insert into database
         $billet = new Billet();
-        $billet->title = $title;
+        $billet->titre = $title;
         $billet->body = $body;
         $billet->date = $date;
-        $billet->category = $cat_id;
+        $billet->cat_id = $cat_id;
         $billet->save();
 
         $this->cont->flash->addMessage('info', "Bill added successfully");
