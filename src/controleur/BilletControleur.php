@@ -23,7 +23,7 @@ class BilletControleur {
     }
 
     public function liste($rq, $rs, $args) {
-        $numPage = $args['numPage'];
+        $numPage = $args['numpage'];
         $billets = Billet::orderBy('date', 'DESC')->skip(20*($numPage-1))->take(20)->get();
 
         $bl = new BilletVue($this->cont, $billets, BilletVue::LISTE_VUE, $numPage);
