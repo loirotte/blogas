@@ -69,6 +69,13 @@ h1 {
     color: aliceblue;
 }
 
+h2 {
+    text-align: left;
+    font-size: 1em;
+    font-family : "Times New Roman", Times, sans-serif;
+    color: darkgray;
+}
+
 form{
     font-family : "Times New Roman", Times, sans-serif;
 }
