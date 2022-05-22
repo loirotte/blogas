@@ -94,12 +94,14 @@ YOP;
             }
 
             $res .="</ul>";
+            $next = "{$this->baseURL()}/billets/'.($this->numPage+1)";
+            $previous = "{$this->baseURL()}/billets/'.($this->numPage-1)";
             $res .= <<<YOP
-                <button onclick="window.location.href = '{$this->baseURL()}/billets/'.($this->numPage+1);">Next page</button>
+                <button onclick="window.location.href = $next;">Next page</button>
 YOP;
             if($this->numPage>1)
                 $res .= <<<YOP
-                    <button onclick="window.location.href = '{$this->baseURL()}/billets/'.($this->numPage-1);">Previous page</button>
+                    <button onclick="window.location.href = $previous;">Previous page</button>
 YOP;
 
         }
