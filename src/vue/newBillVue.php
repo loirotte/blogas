@@ -23,9 +23,9 @@ class NewBillVue extends Vue
                 <textarea name="body" class="txtarea" cols="150" rows="100" maxlength="3000" placeholder="Bill text/content" required></textarea><br>
                 <p>pick your article category :</p><br>
                 <div class="choice">
-                    <input type="radio" name="category" value="Sport">Sport</input>
-                    <input type="radio" name="category" value="Cinema">Cinema</input>
-                    <input type="radio" name="category" value="Music">Music</input>
+                    <input type="radio" name="category" value="sport">Sport</input>
+                    <input type="radio" name="category" value="cinema">Cinema</input>
+                    <input type="radio" name="category" value="music">Music</input>
                     <input type="radio" name="category" value="TV">TV</input>
                     <input type="radio" name="category" value="Other">Other</input>
                 </div>
