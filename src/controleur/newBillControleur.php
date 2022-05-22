@@ -43,6 +43,6 @@ class NewBillControleur
         $billet->save();
 
         $this->cont->flash->addMessage('info', "Bill added successfully");
-        return $rs->withRedirect($this->cont->router->pathFor('billet_liste', ['numPage' => 1]));
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste', ['numpage' => 1]));
     }
 }
