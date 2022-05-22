@@ -6,6 +6,7 @@ use blogapp\vue\Vue;
 class BilletVue extends Vue {
     const BILLET_VUE = 1;
     const LISTE_VUE = 2;
+    protected $numPage;
     
     public function render() {
         switch($this->selecteur) {
@@ -21,7 +22,15 @@ class BilletVue extends Vue {
         return $this->userPage($content);
     }
 
-    public function billet() {
+    public function __construct($cont, $src, $sel, $np) {
+        $this->cont = $cont;
+        $this->source = $src;
+        $this->selecteur = $sel;
+        $this->numPage = $np;
+    }
+
+    public function billet()
+    {
         $res = "";
 
         if ($this->source != null) {
@@ -33,11 +42,22 @@ class BilletVue extends Vue {
       <li>Contenu : {$this->source->body}</li>
     </ul>
 YOP;
-        }
-        else
-            $res = "<h1>Erreur : le billet n'existe pas !</h1>";
 
-        return $res;
+            //member only
+            if (isset($_COOKIE["membre_authentifier"])) {
+                $urlCommentaire = $this->cont['router']->pathFor('com_ajout', ['id' => $this->numPage]);
+                $res .= <<<YOP
+                <form method="post" action="$urlCommentaire">
+                    <textarea cols="150" rows="10" name="comment" maxlength="450"/>
+                    <input type="submit" value="Valider"/>
+                </form>
+YOP;
+
+            } else
+                $res = "<h1>Error : The bill doesn't exist !</h1>";
+
+            return $res;
+        }
     }
 
     public function liste() {
@@ -45,7 +65,7 @@ YOP;
         
         if ($this->source != null) {
             $res = <<<YOP
-    <h1>Affichage de la liste des billets</h1>
+    <h1>Displaying the list of tickets</h1>
     <ul>
 YOP;
 
@@ -58,7 +78,7 @@ YOP;
             $res .= "</ul>";
         }
         else
-            $res = "<h1>Erreur : la liste de billets n'existe pas !</h1>";
+            $res = "<h1>Error : the bill list doesn't exist !</h1>";
 
         return $res;
     }
