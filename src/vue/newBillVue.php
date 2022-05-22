@@ -3,7 +3,7 @@
 namespace blogapp\vue;
 use blogapp\vue\vue;
 
-class NewBillVue
+class NewBillVue extends Vue
 {
     const NOUVEAU_VUE = 1;
 
