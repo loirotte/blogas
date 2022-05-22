@@ -74,12 +74,12 @@ $app->post('/authentification',
     ->setName('memb_authent');
 
 // Nouveau billet
-$app->get('/newBill',
+$app->get('/newbill',
         '\blogapp\controleur\NewBillControleur:nouveau')
     ->setName('bill_nouveau');
 
 // Suite à la création d'un billet
-$app->post('/createBill',
+$app->post('/createbill',
         '\blogapp\controleur\NewBillControleur:saisie')
     ->setName('bill_cree');
 
