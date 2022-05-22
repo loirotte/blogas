@@ -55,6 +55,6 @@ class UtilisateurControleur {
         // Ajout d'un flash
         $this->cont->flash->addMessage('info', "Utilisateur $nom ajouté !");
         // Retour de la réponse avec redirection
-        return $rs->withRedirect($this->cont->router->pathFor('billet_liste'));
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste', ['numpage' => '1']));
     }
 }
