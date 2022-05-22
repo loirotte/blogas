@@ -31,7 +31,7 @@ class Vue {
         {
             $boutons = <<<YOP
           <button onclick="window.location.href = '{$this->baseURL()}/deconnexion';">Log Out</button>
-          <button onclick="window.location.href = '{$this->baseURL()}/newBill';">New Bill</button>
+          <button onclick="window.location.href = '{$this->baseURL()}/newbill';">New Bill</button>
           YOP;
         }
         else
