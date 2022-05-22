@@ -17,7 +17,7 @@ class BilletControleur {
         $id = $args['id'];
         $billet = Billet::where('id', '=', $id)->first();
 
-        $bl = new BilletVue($this->cont, $billet, BilletVue::BILLET_VUE,$billet->id);
+        $bl = new BilletVue($this->cont, $billet, BilletVue::BILLET_VUE, $billet->id);
         $rs->getBody()->write($bl->render());
         return $rs;
     }
