@@ -55,7 +55,7 @@ YOP;
             }
 
             //Displaying bill comments
-            $comments = $this->source->commentaires()->get();
+            $comments = $this->source->getCommentaires()->get();
             if(isset($comments)) {
                 foreach ($comments as $comment) {
                     $res .= <<<YOP
