@@ -3,7 +3,7 @@
 namespace blogapp\vue;
 use blogapp\vue\vue;
 
-class newBillVue
+class NewBillVue
 {
     const NOUVEAU_VUE = 1;
 
@@ -33,7 +33,7 @@ class newBillVue
             </form>
 YOP;
 
-}
+    }
 }
 
 ?>
