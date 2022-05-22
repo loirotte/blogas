@@ -28,4 +28,20 @@ class BilletControleur {
         $rs->getBody()->write($bl->render());
         return $rs;
     }
+
+    public function ajoute($rq, $rs, $args){
+        $content = filter_var($rq->getParsedBodyParam('commentaire'), FILTER_SANITIZE_STRING);
+        $billet = $args['id'];
+        $auteur = $_COOKIE['membre'];
+
+        $commentaire = new Commentaire();
+        $commentaire->content = $content;
+        $commentaire->billet = $billet;
+        $commentaire->auteur = $auteur;
+        $commentaire->date = date("Y-m-d");
+        $commentaire->save();
+
+        $this->cont->flash->addMessage('info', "Billet posté :)");
+        return $rs->withRedirect($this->cont->router->pathFor('billet_aff', ['id' => $billet]));
+    }
 }
