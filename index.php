@@ -73,4 +73,23 @@ $app->post('/authentification',
     '\blogapp\controleur\MembreControleur:authentifie')
     ->setName('memb_authent');
 
+// Nouveau billet
+$app->get('/newbill',
+    '\blogapp\controleur\NewBillControleur:nouveau')
+    ->setName('bill_nouveau');
+
+// Suite à la création d'un billet
+$app->post('/createbill',
+    '\blogapp\controleur\NewBillControleur:saisie')
+    ->setName('bill_cree');
+
+// commentaires
+$app->get('/comment',
+    '\blogapp\controleur\BilletControleur:affiche')
+    ->setName('nouveau_com');
+
+$app->post('/commented/{id}',
+    '\blogapp\controleur\BilletControleur:ajoute')
+    ->setName('com_ajoute');
+
 $app->run();
