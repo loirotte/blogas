@@ -24,11 +24,11 @@ class newBillVue
             <textarea name="body" class="txtarea" placeholder="Bill text/content" required/><br>
             <p>pick your article category :</p><br>
             <div class="choice">
-                <input type="radio" name="category" value="Sport">
-                <input type="radio" name="category" value="Cinema">
-                <input type="radio" name="category" value="Music">
-                <input type="radio" name="category" value="TV">
-                <input type="radio" name="category" value="Other">
+                <input type="radio" name="category" value="Sport">Sport</input>
+                <input type="radio" name="category" value="Cinema">Cinema</input>
+                <input type="radio" name="category" value="Music">Music</input>
+                <input type="radio" name="category" value="TV">TV</input>
+                <input type="radio" name="category" value="Other">Other</input>
             </div>
             <input type="submit" name="Submit">
             </form>
