@@ -18,18 +18,18 @@ class NewBillVue extends Vue
     {
         return <<<YOP
             <form method="post" action="{$this->cont['router']->pathFor('bill_cree')}">
-            <h1>New Bill</h1>
-            <input type="text" name="title" class="toggle-all" placeholder="Bill Title" required/><br>
-            <textarea name="body" class="txtarea" cols="150" rows="100" maxlength="3000" placeholder="Bill text/content" required></textarea><br>
-            <p>pick your article category :</p><br>
-            <div class="choice">
-                <input type="radio" name="category" value="Sport">Sport</input>
-                <input type="radio" name="category" value="Cinema">Cinema</input>
-                <input type="radio" name="category" value="Music">Music</input>
-                <input type="radio" name="category" value="TV">TV</input>
-                <input type="radio" name="category" value="Other">Other</input>
-            </div>
-            <input type="submit" name="Submit">
+                <h1>New Bill</h1>
+                <input type="text" name="title" class="toggle-all" placeholder="Bill Title" required/><br>
+                <textarea name="body" class="txtarea" cols="150" rows="100" maxlength="3000" placeholder="Bill text/content" required></textarea><br>
+                <p>pick your article category :</p><br>
+                <div class="choice">
+                    <input type="radio" name="category" value="Sport">Sport</input>
+                    <input type="radio" name="category" value="Cinema">Cinema</input>
+                    <input type="radio" name="category" value="Music">Music</input>
+                    <input type="radio" name="category" value="TV">TV</input>
+                    <input type="radio" name="category" value="Other">Other</input>
+                </div>
+                <input type="submit" name="Submit">
             </form>
 YOP;
 
