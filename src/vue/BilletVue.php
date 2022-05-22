@@ -89,7 +89,7 @@ YOP;
                 $cat =$billet->category;
                 $bil = "$billet->titre,  $billet->date, $cat->titre,  $text";
                 $res .= <<<YOP
-      <li><a href="$url">{$billet->titre}</a></li>
+      <li><a href="$url">$bil</a></li>
 YOP;
             }
 
