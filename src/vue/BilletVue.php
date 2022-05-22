@@ -87,9 +87,9 @@ YOP;
                 $url = $this->cont->router->pathFor('billet_aff', ['id' => $billet->id]);
                 $text = substr($billet->body,0,50);
                 $cat =$billet->category;
-                $bil = "$billet->title,  $billet->date, $cat->titre,  $text";
+                $bil = "$billet->titre,  $billet->date, $cat->titre,  $text";
                 $res .= <<<YOP
-      <li><a href="$url">{$billet->title}</a></li>
+      <li><a href="$url">{$billet->titre}</a></li>
 YOP;
             }
 
