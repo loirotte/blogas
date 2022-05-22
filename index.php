@@ -65,7 +65,7 @@ $app->get('/connexion',
 
 // Deconnexion d'un utilisateur
 $app->get('/deconnexion',
-    '\blogapp\controleur\MembreControleur:connexion')
+    '\blogapp\controleur\MembreControleur:deconnexion')
     ->setName('memb_deconnect');
 
 // Suite à la connexion d'un utilisateur
