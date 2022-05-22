@@ -36,7 +36,7 @@ $app->get('/',
     function ($rq,$rs,$args){
         return $rs->withRedirect($this['router']->pathFor('billet_liste',['numpage'=>"1"]));
         })
-    ->setName('billet_aff');
+    ->setName('billet');
 
 // Affichage d'un billet
 $app->get('/billet/{id}',
