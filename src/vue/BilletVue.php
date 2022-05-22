@@ -48,7 +48,7 @@ YOP;
                 $urlCommentaire = $this->cont['router']->pathFor('com_ajout', ['id' => $this->numPage]);
                 $res .= <<<YOP
                 <form method="post" action="$urlCommentaire">
-                    <textarea cols="100" rows="13" name="commentaire" maxlength="500"/>
+                    <textarea cols="100" rows="13" name="commentaire" maxlength="500" class="txtarea"/>
                     <input type="submit" value="Valider"/>
                 </form>
 YOP;
@@ -86,10 +86,10 @@ YOP;
             foreach ($this->source as $billet) {
                 $url = $this->cont->router->pathFor('billet_aff', ['id' => $billet->id]);
                 $text = substr($billet->body,0,50);
-                $cat =$billet->categorie;
-                $bil = "$billet->titre,  $billet->date, $cat->titre,  $text";
+                $cat =$billet->category;
+                $bil = "$billet->title,  $billet->date, $cat->titre,  $text";
                 $res .= <<<YOP
-      <li><a href="$url">{$billet->titre}</a></li>
+      <li><a href="$url">{$billet->title}</a></li>
 YOP;
             }
 
