@@ -28,7 +28,7 @@ class MembreControleur
             setcookie("membre_authentifier");
         }
         $this->cont->flash->addMessage('info', "disconnected successfully");
-        return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numPage' => 1]));
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numpage' => 1]));
     }
 
     //member authentication
@@ -59,6 +59,6 @@ class MembreControleur
         // Ajout d'un flash
         $this->cont->flash->addMessage('info', "User $pseudo connected !");
         // Retour de la réponse avec redirection
-        return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numPage' =>1]));
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numpage' =>1]));
     }
 }
