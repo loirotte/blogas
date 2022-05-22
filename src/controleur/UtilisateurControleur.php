@@ -35,7 +35,7 @@ class UtilisateurControleur {
 
         // Valider email
         if(!(filter_var($mail, FILTER_VALIDATE_EMAIL))){
-            $this->cont->flash->addMessage('info', "Echec : email incorrect ");
+            $this->cont->flash->addMessage('error', "Echec : email incorrect ");
             return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
         }
         else{
@@ -44,7 +44,7 @@ class UtilisateurControleur {
 
         // Verifier mdp
         if($mdp !== $verification){
-            $this->cont->flash->addMessage('info', "Echec : mots de passe différents ");
+            $this->cont->flash->addMessage('error', "Echec : mots de passe différents ");
             return $rs->withRedirect($this->cont->router->pathFor('util_nouveau'));
         } else {
             $membre->mdp_hash = password_hash($mdp,PASSWORD_DEFAULT);
