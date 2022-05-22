@@ -48,17 +48,31 @@ YOP;
                 $urlCommentaire = $this->cont['router']->pathFor('com_ajout', ['id' => $this->numPage]);
                 $res .= <<<YOP
                 <form method="post" action="$urlCommentaire">
-                    <textarea cols="150" rows="10" name="comment" maxlength="450"/>
+                    <textarea cols="100" rows="13" name="commentaire" maxlength="500"/>
                     <input type="submit" value="Valider"/>
                 </form>
 YOP;
+            }
 
-            } else
-                $res = "<h1>Error : The bill doesn't exist !</h1>";
+            //Displaying bill comments
+            $comments = $this->source->commentaires()->get();
+            if(isset($comments)) {
+                foreach ($comments as $comment) {
+                    $res .= <<<YOP
+                        <div>
+                            <p>$comment->content</p>
+                            <p>Auteur : $comment->auteur, $comment->date</p>
+                        </div>
+YOP;
+                }
+            }
 
-            return $res;
-        }
+        } else
+            $res = "<h1>Error : The bill doesn't exist !</h1>";
+
+        return $res;
     }
+
 
     public function liste() {
         $res = "";
@@ -71,11 +85,22 @@ YOP;
 
             foreach ($this->source as $billet) {
                 $url = $this->cont->router->pathFor('billet_aff', ['id' => $billet->id]);
+                $text = substr($billet->body,0,50);
+                $cat =$billet->categorie;
+                $bil = "$billet->titre,  $billet->date, $cat->titre,  $text";
                 $res .= <<<YOP
       <li><a href="$url">{$billet->titre}</a></li>
 YOP;
             }
-            $res .= "</ul>";
+            $res .= <<<YOP 
+                </ul>
+                <button onclick="window.location.href = '{$this->baseURL()}/billets/'.($this->numPage+1);">Next page</button>
+YOP;
+            if($this->numPage>1)
+                $res .= <<<YOP
+                    <button onclick="window.location.href = '{$this->baseURL()}/billets/'.($this->numPage-1);">Previous page</button>
+YOP;
+
         }
         else
             $res = "<h1>Error : the bill list doesn't exist !</h1>";
