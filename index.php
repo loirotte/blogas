@@ -63,10 +63,12 @@ $app->get('/connexion',
     '\blogapp\controleur\MembreControleur:connexion')
     ->setName('memb_connect');
 
+// Deconnexion d'un utilisateur
 $app->get('/deconnexion',
     '\blogapp\controleur\MembreControleur:connexion')
     ->setName('memb_deconnect');
 
+// Suite à la connexion d'un utilisateur
 $app->post('/authentification',
     '\blogapp\controleur\MembreControleur:authentifie')
     ->setName('memb_authent');
