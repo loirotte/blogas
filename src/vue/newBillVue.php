@@ -23,7 +23,7 @@ class newBillVue
             <input type="text" name="title" class="toggle-all" placeholder="Bill Title" required><br>
             <textarea name="body" class="txtarea" placeholder="Bill text/content" required/><br>
             <p>pick your article category :</p><br>
-            <div>
+            <div class="choice">
                 <input type="radio" name="category" value="Sport">
                 <input type="radio" name="category" value="Cinema">
                 <input type="radio" name="category" value="Music">
