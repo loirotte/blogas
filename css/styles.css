@@ -40,11 +40,10 @@ div.flash-error {
     justify-content: space-between;
 }
 
-input[type=text]{
-    padding:5px;
+input[type=text] .txtarea{
     width: 100%;
     margin: 5px;
-    outline: 8px ridge rgba(32, 32, 121, 0.6);
+    outline: 8px ridge darkblue;
     border-radius: 2rem;
 }
 
