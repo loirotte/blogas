@@ -8,15 +8,14 @@ class newBillVue
     const NOUVEAU_VUE = 1;
 
     public function render() {
-        switch($this->selecteur){
-            case self::NOUVEAU_VUE:
-                $content = $this->nouveau();
-                break;
+        if ($this->selecteur == self::NOUVEAU_VUE) {
+            $content = $this->nouveau();
         }
         return $this->userPage($content);
     }
 
-    public function nouveau() {
+    public function nouveau(): string
+    {
         return <<<YOP
             <form method="post" action="{$this->cont['router']->pathFor('bill_cree')}">
             <h1>New Bill</h1>
