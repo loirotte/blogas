@@ -48,7 +48,7 @@ YOP;
                 $urlCommentaire = $this->cont['router']->pathFor('com_ajout', ['id' => $this->numPage]);
                 $res .= <<<YOP
                 <form method="post" action="$urlCommentaire">
-                    <textarea cols="100" rows="13" name="commentaire" maxlength="500" class="txtarea"/>
+                    <textarea cols="100" rows="13" name="commentaire" maxlength="500" class="txtarea"></textarea>
                     <input type="submit" value="Valider"/>
                 </form>
 YOP;
