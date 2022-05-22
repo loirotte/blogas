@@ -48,8 +48,8 @@ class Vue {
          <html>
            <head>
              <title>Application de Blog !</title>
-             <link rel="stylesheet" href="{$this->baseURL()}/css/styles.css" type="text/css" />
-             <meta charset="utf-8" />
+             <link rel="stylesheet" href="{$this->baseURL()}/css/styles.css" type="text/css"/>
+             <meta charset="utf-8"/>
            </head>
            <body>
            <div id=connexion>
