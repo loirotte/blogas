@@ -5,7 +5,7 @@ use blogapp\modele\Categorie;
 use blogapp\modele\Billet;
 use blogapp\vue\newBillVue;
 
-class newBillControleur
+class NewBillControleur
 {
     private $cont;
 
@@ -15,7 +15,7 @@ class newBillControleur
     }
 
     public function nouveau($rq, $rs, $args) {
-        $bill = newBillVue($this->cont, null, newBillVue::NOUVEAU_VUE);
+        $bill = new newBillVue($this->cont, null, newBillVue::NOUVEAU_VUE);
         $rs->getBody()->write($bill->render());
         return $rs;
     }
@@ -43,5 +43,6 @@ class newBillControleur
         $billet->save();
 
         $this->cont->flash->addMessage('info', "Bill added successfully");
-        return $rs->withRedirect($this->cont->router->pathFor('billet_liste',['numPage' =>1]));
+        return $rs->withRedirect($this->cont->router->pathFor('billet_liste', ['numPage' => 1]));
+    }
 }
