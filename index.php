@@ -91,6 +91,6 @@ $app->get('/commentaire',
 // Suite à la création d'un commentaire
 $app->post('/commente/{id}',
         '\blogapp\controleur\BilletControleur:ajoute')
-    ->setName('com_ajoute');
+    ->setName('com_ajout');
 
 $app->run();
