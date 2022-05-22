@@ -9,7 +9,7 @@ class NewBillControleur
 {
     private $cont;
 
-    private function __construct($conteneur)
+    public function __construct($conteneur)
     {
         $this->cont = $conteneur;
     }
