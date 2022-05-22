@@ -19,8 +19,8 @@ class NewBillVue extends Vue
         return <<<YOP
             <form method="post" action="{$this->cont['router']->pathFor('bill_cree')}">
             <h1>New Bill</h1>
-            <input type="text" name="title" class="toggle-all" placeholder="Bill Title" required><br>
-            <textarea name="body" class="txtarea" placeholder="Bill text/content" required/><br>
+            <input type="text" name="title" class="toggle-all" placeholder="Bill Title" required/><br>
+            <textarea name="body" class="txtarea" placeholder="Bill text/content" required></textarea><br>
             <p>pick your article category :</p><br>
             <div class="choice">
                 <input type="radio" name="category" value="Sport">Sport</input>
