@@ -92,8 +92,9 @@ YOP;
       <li><a href="$url">{$billet->titre}</a></li>
 YOP;
             }
-            $res .= <<<YOP 
-                </ul>
+
+            $res .="</ul>";
+            $res .= <<<YOP
                 <button onclick="window.location.href = '{$this->baseURL()}/billets/'.($this->numPage+1);">Next page</button>
 YOP;
             if($this->numPage>1)
