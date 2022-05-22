@@ -34,7 +34,7 @@ $app = new \Slim\App($configuration);
 // Routes qui redirige vers la liste de billets
 $app->get('/',
     function ($rq,$rs,$args){
-        return $rs->withRedirect($this['router']->pathFor('billet_liste'));
+        return $rs->withRedirect($this['router']->pathFor('billet_liste',['numpage'=>"1"]));
         })
     ->setName('billet_aff');
 
@@ -44,7 +44,7 @@ $app->get('/billet/{id}',
     ->setName('billet_aff');
 
 // Affichage de tous les billets
-$app->get('/billets',
+$app->get('/billets/{numpage}',
           '\blogapp\controleur\BilletControleur:liste')
     ->setName('billet_liste');
 
